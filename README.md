@@ -20,7 +20,7 @@
 * [Dotenv](https://www.npmjs.com/package/dotenv)
 ## Utilizzo
 Backend, senza frontend, costruito per ipotetica azienda di cibo.
-Si possono registrare utenti, con nome, cognome, email e immagine profilo, prodotti, con immagine relativa e nome, e ordini tramite id dei suddetti con la data d'emissione e, qualora ci fosse, pdf annesso.
+Si possono registrare utenti con nome, cognome, email e immagine profilo, prodotti con immagine e nome, e ordini tramite id dei suddetti con la data d'emissione e, qualora ci fosse, pdf annesso.
 Il progetto segue l'architettura MVC.
 ## Autore
 * [Livio Dimola](https://github.com/liviodimola) - *novello Full Stack Developer*
