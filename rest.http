@@ -1,0 +1,214 @@
+### Ricevi tutti i prodotti
+GET http://localhost:3000/products
+
+### Creare prodotto
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": ""
+}
+
+### Creare prodotto con immagine
+POST http://localhost:3000/products
+Content-Type: multipart/form-data; boundary=----My
+
+------My
+Content-Disposition: form-data; name="name"
+
+Name
+------My
+Content-Disposition: form-data; name="file"; filename="image.jpg"
+Content-Type: image/jpeg
+
+< Path
+------My--
+
+### Ricerca prodotto tramite id
+GET http://localhost:3000/products/id
+
+
+### Aggiorna prodotto tramite id
+PATCH http://localhost:3000/products/id
+Content-Type: application/json
+
+{
+    "name": ""
+}
+
+### Aggiorna prodotto con immagine
+PATCH http://localhost:3000/products/id
+Content-Type: multipart/form-data; boundary=----My
+
+------My
+Content-Disposition: form-data; name="name"
+
+Name
+------My
+Content-Disposition: form-data; name="file"; filename="image.jpg"
+Content-Type: image/jpeg
+
+< Path
+------My--
+
+### Cancella prodotto tramite id
+DELETE http://localhost:3000/products/id
+
+//////////////////////////////////////////////
+
+### Ricevi tutti gli utenti
+GET http://localhost:3000/users
+
+### Creare utente
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name": "",
+    "surname": "",
+    "email": ""
+}
+
+### Creare utente con immagine
+POST http://localhost:3000/users
+Content-Type: multipart/form-data; boundary=----My
+
+------My
+Content-Disposition: form-data; name="name"
+
+Nome
+------My
+Content-Disposition: form-data; name="surname"
+
+Cognome
+------My
+Content-Disposition: form-data; name="email"
+
+Email
+------My
+Content-Disposition: form-data; name="file"; filename="foto.jpg"
+Content-Type: image/jpeg
+
+< Path
+------My--
+
+### Ricerca utente tramite id
+GET http://localhost:3000/users/id
+
+
+### Aggiorna utente tramite id
+PATCH http://localhost:3000/users/id
+Content-Type: application/json
+
+{
+    "name": "",
+    "surname": "",
+    "email": ""
+}
+
+### Aggiorna utente con immagine
+PATCH http://localhost:3000/users/id
+Content-Type: multipart/form-data; boundary=----My
+
+------My
+Content-Disposition: form-data; name="name"
+
+Nome
+------My
+Content-Disposition: form-data; name="surname"
+
+Cognome
+------My
+Content-Disposition: form-data; name="email"
+
+Email
+------My
+Content-Disposition: form-data; name="file"; filename="foto.jpg"
+Content-Type: image/jpeg
+
+< Path
+------My--
+
+### Cancella utente tramite id
+DELETE http://localhost:3000/users/id
+
+//////////////////////////////////////////////
+
+### Ricevi tutti gli ordini
+GET http://localhost:3000/orders
+
+### Creare ordine
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+    "products": "",
+    "users": "",
+    "entryDate": "gg-mm-aaaa/mm:hh"
+}
+
+### Creare ordine con documento
+POST http://localhost:3000/orders
+Content-Type: multipart/form-data; boundary=----My
+
+------My
+Content-Disposition: form-data; name="products"
+
+["id_prodotto_0, ..."]
+------My
+Content-Disposition: form-data; name="users"
+
+["id_utente_0, ..."]
+------My
+Content-Disposition: form-data; name="entryDate"
+
+gg-mm-aaaa/mm:hh
+------My
+Content-Disposition: form-data; name="file"; filename="documento.pdf"
+Content-Type: application/pdf
+
+< Path
+------My--
+
+### Ricerca ordine tramite id
+GET http://localhost:3000/orders/id
+
+
+### Aggiorna ordine tramite id
+PATCH http://localhost:3000/orders/id
+Content-Type: application/json
+
+{
+    "products": "",
+    "users": "",
+    "entryDate": "gg-mm-aaaa/mm:hh"
+}
+
+### Aggiorna ordine con documento
+PATCH http://localhost:3000/orders/id
+Content-Type: multipart/form-data; boundary=----My
+
+------My
+Content-Disposition: form-data; name="products"
+
+["id_prodotto_0, ..."]
+------My
+Content-Disposition: form-data; name="users"
+
+["id_utente_0, ..."]
+------My
+Content-Disposition: form-data; name="entryDate"
+
+gg-mm-aaaa/mm:hh
+------My
+Content-Disposition: form-data; name="file"; filename="documento.pdf"
+Content-Type: application/pdf
+
+< Path
+------My--
+
+### Cancella ordine tramite id
+DELETE http://localhost:3000/orders/id
+
+### Test
+GET http://localhost:3000/percorso-sconosciuto
