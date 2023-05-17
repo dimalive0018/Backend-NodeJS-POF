@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const httpErrors = require('http-errors');
 const sanitize = require('mongo-sanitize');
 const dataOrder = require('../Data/Order.data');
-const Order = require('../Models/Order.model');
 
 module.exports = {
     getOrders : async (req, res, next) => {
@@ -34,7 +33,7 @@ module.exports = {
     createOrder : async (req, res, next) => {
         try {
             const postOrder = { ...req.body, file: req.file };
-            const newOrder = await new Order(postOrder).save();
+            const newOrder = await dataOrder.newOrder(postOrder);
             const result = await dataOrder.createOrder(newOrder._id, 'products', 'users');
             res.send(result);
         } catch (error) {

@@ -142,8 +142,8 @@ POST http://localhost:3000/orders
 Content-Type: application/json
 
 {
-    "products": "",
-    "users": "",
+    "products": "id",
+    "users": "id",
     "entryDate": "gg-mm-aaaa/mm:hh"
 }
 
@@ -179,8 +179,8 @@ PATCH http://localhost:3000/orders/id
 Content-Type: application/json
 
 {
-    "products": "",
-    "users": "",
+    "products": "id",
+    "users": "id",
     "entryDate": "gg-mm-aaaa/mm:hh"
 }
 
