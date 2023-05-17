@@ -8,33 +8,33 @@ const storage = require('../multerStorage');
 
 const upload = multer({ storage: storage });
 
-router.get('/products', productController.getAllProducts);
+router.get('/products', productController.getProducts);
 
-router.post('/products', upload.single('file'), productController.postProduct);  
+router.post('/products', upload.single('file'), productController.createProduct);  
 
-router.get('/products/:id', productController.getProductById);
+router.get('/products/:id', productController.findProduct);
 
-router.patch('/products/:id', upload.single('file'), productController.patchProduct);
+router.patch('/products/:id', upload.single('file'), productController.updateProduct);
 
 router.delete('/products/:id', productController.deleteProduct);
 
-router.get('/users', userController.getAllUsers);
+router.get('/users', userController.getUsers);
 
-router.post('/users', upload.single('file'), userController.postUser);
+router.post('/users', upload.single('file'), userController.createUser);
 
-router.get('/users/:id', userController.getUserById);
+router.get('/users/:id', userController.findUser);
 
-router.patch('/users/:id', upload.single('file'), userController.patchUser);
+router.patch('/users/:id', upload.single('file'), userController.updateUser);
 
 router.delete('/users/:id', userController.deleteUser);
 
-router.get('/orders', orderController.getAllOrder);
+router.get('/orders', orderController.getOrders);
 
-router.post('/orders', upload.single('file'), orderController.postOrder);
+router.post('/orders', upload.single('file'), orderController.createOrder);
 
-router.get('/orders/:id', orderController.getOrderById);
+router.get('/orders/:id', orderController.findOrder);
 
-router.patch('/orders/:id', upload.single('file'), orderController.patchOrder);
+router.patch('/orders/:id', upload.single('file'), orderController.updateOrder);
 
 router.delete('/orders/:id', orderController.deleteOrder);
 

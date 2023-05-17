@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const handlingError = require('http-errors');
+const httpErrors = require('http-errors');
 const sanitize = require('mongo-sanitize');
-
+const dataOrder = require('../Data/Order.data');
 const Order = require('../Models/Order.model');
 
 module.exports = {
-    getAllOrder : async (req, res, next) => {
+    getOrders : async (req, res, next) => {
         try {
             const { startDate, endDate, products } = req.query;
             let query = {};
@@ -21,65 +21,65 @@ module.exports = {
             if (products) {
                 query.products = sanitize(products);
             };
-            return await Order.find(query).populate('products').populate('users').then(result => res.send(result));
+            const result = await dataOrder.getOrders(query, 'products', 'users');
+            res.send(result);
         } catch (error) {
             console.log(error.message);
             if (error instanceof mongoose.CastError) {
-                return next(handlingError(400, 'Id non valido'));
+                return next(httpErrors(400, 'Id non valido'));
             };
             next(error);
         }
     },
-    postOrder: async (req, res, next) => {
+    createOrder : async (req, res, next) => {
         try {
             const postOrder = { ...req.body, file: req.file };
             const newOrder = await new Order(postOrder).save();
-            return await Order.findById(newOrder._id).populate('products').populate('users').then(result => res.send(result));
+            const result = await dataOrder.createOrder(newOrder._id, 'products', 'users');
+            res.send(result);
         } catch (error) {
             console.log(error.message);
             if (error instanceof mongoose.CastError) {
-                return next(handlingError(400, 'Id non valido'));
+                return next(httpErrors(400, 'Id non valido'));
             };
             if (error instanceof mongoose.Error.ValidationError) {
-                return next(handlingError(400, error.message));
+                return next(httpErrors(400, error.message));
             };
             next(error);
         };
     },
-    getOrderById : async (req, res, next) => {
+    findOrder : async (req, res, next) => {
         const { id } = req.params;
         try {
-            return await Order.findOne({ _id: id }).populate('products').populate('users').then(getOrder => {
-                if (!getOrder) {
-                    return next(handlingError(404, 'Ordine non trovato'));
-                };
-                res.send(getOrder);
-            })
+            const result = await dataOrder.findOrder(id, 'products', 'users');
+            if (!result) {
+                return next(httpErrors(404, 'Ordine non trovato'));
+            };
+            res.send(result);
         } catch (error) {
             console.log(error.message);
             if (error instanceof mongoose.CastError) {
-                return next(handlingError(400, 'Id non valido'));
+                return next(httpErrors(400, 'Id non valido'));
             };
             next(error);
         }
     },
-    patchOrder: async (req, res, next) => {
+    updateOrder : async (req, res, next) => {
         const { id } = req.params;
         try {
             const patchOrder = { ...req.body, file: req.file };
-            return await Order.findOneAndUpdate({ _id: id }, { $set: patchOrder }, { new: true, runValidators: true }).populate('products').populate('users').then(patchOrder => {
-                if (!patchOrder) {
-                    return next(handlingError(404, 'Ordine non trovato'));
-                };
-                res.send(patchOrder);
-            })
+            const result = await dataOrder.updateOrder(id, patchOrder, 'products', 'users');
+            if (!result) {
+                return next(httpErrors(404, 'Ordine non trovato'));
+            };
+            res.send(result);
         } catch (error) {
             console.log(error.message);
             if (error instanceof mongoose.CastError) {
-                return next(handlingError(400, 'Id non valido'));
+                return next(httpErrors(400, 'Id non valido'));
             };
             if (error instanceof mongoose.Error.ValidationError) {
-                return next(handlingError(400, error.message));
+                return next(httpErrors(400, error.message));
             };
             next(error);
         }
@@ -87,16 +87,15 @@ module.exports = {
     deleteOrder : async (req, res, next) => {
         const { id } = req.params;
         try {
-            return await Order.findOneAndDelete({ _id: id }).populate('products').populate('users').then(deleteOrder => {
-                if (!deleteOrder) {
-                    return next(handlingError(404, 'Ordine non trovato'));
-                };
-                res.send(deleteOrder);
-            })
+            const result = await dataOrder.deleteOrder(id, 'products', 'users');
+            if (!result) {
+                    return next(httpErrors(404, 'Ordine non trovato'));
+            };
+            res.send(result);
         } catch (error) {
             console.log(error.message);
             if (error instanceof mongoose.CastError) {
-                return next(handlingError(400, 'Id non valido'));
+                return next(httpErrors(400, 'Id non valido'));
             }
             next(error);
         }

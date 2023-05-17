@@ -211,4 +211,4 @@ Content-Type: application/pdf
 DELETE http://localhost:3000/orders/id
 
 ### Test
-GET http://localhost:3000/percorso-sconosciuto
+GET http://localhost:3000/percorso-non-valido

@@ -1,23 +1,28 @@
 const express = require('express');
-const handlingError = require('http-errors');
-const dotenv = require('dotenv');
+const connectDB = require('./initDB');
+const httpErrors = require('http-errors');
 
 const app = express();
-
-dotenv.config();
 
 app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
 
-require('./initDB')();
+connectDB()
+    .then(() => {
+        console.log('MongoDB è connesso');
+        app.listen(process.env.PORT, () => {
+            console.log('Server aperto nella porta ' + process.env.PORT);
+        })
+    })
+    .catch(err => console.log(err.message));
 
 const appRoute = require('./Routes/App.route');
 app.use('/', appRoute);
 
 app.use((req, res, next) => {
-    next(handlingError(404, 'Non trovato'));
+    next(httpErrors(404, 'Non trovato'));
 })
 
 app.use((err, req, res, next) => {
@@ -28,7 +33,3 @@ app.use((err, req, res, next) => {
         }
     })
 });
-
-app.listen(process.env.PORT, () => {
-    console.log('Server aperto nella porta ' + process.env.PORT);
-})
