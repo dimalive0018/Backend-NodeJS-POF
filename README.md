@@ -1,7 +1,7 @@
-# Backend-NodeJS-POF
+<h1 align="center">Backend-NodeJS-POF</h1>
 <br/>
 <p align="center">
-  <h3 align="center">Backend generico costruito per ipotetica azienda di cibo plant based</h3>
+  <h2 align="center">Backend generico costruito per ipotetica azienda di cibo plant based</h3>
 </p>
 
 ![Forks](https://img.shields.io/github/forks/liviodimola/Backend-NodeJS-POF?style=social) ![Stargazers](https://img.shields.io/github/stars/liviodimola/Backend-NodeJS-POF?style=social) 
