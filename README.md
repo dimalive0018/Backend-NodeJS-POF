@@ -26,36 +26,32 @@ Le principali funzionalità dell'applicazione includono:
 
 <h3>Gestione dei prodotti:</h3>
 
-Ricevere tutti i prodotti.
-Creare un nuovo prodotto fornendo il nome.
-Creare un nuovo prodotto con un'immagine.
-Trovare un prodotto specifico tramite ID.
-Aggiornare un prodotto esistente tramite ID fornendo un nuovo nome.
-Aggiornare un prodotto esistente con un'immagine.
-Eliminare un prodotto tramite ID.
-Gestione degli utenti:
+<p>Ricevere tutti i prodotti.</p>
+<p>Creare un nuovo prodotto fornendo il nome.</p>
+<p>Creare un nuovo prodotto con un'immagine.</p>
+<p>Trovare un prodotto specifico tramite ID.</p>
+<p>Aggiornare un prodotto esistente tramite ID fornendo un nuovo nome.</p>
+<p>Aggiornare un prodotto esistente con un'immagine.</p>
+<p>Eliminare un prodotto tramite ID.</p>
 
 <h3>Gestione utenti:</h3>
 
-Ricevere tutti gli utenti.
-Creare un nuovo utente fornendo nome, cognome ed email.
-Creare un nuovo utente con un'immagine.
-Trovare un utente specifico tramite ID.
-Aggiornare un utente esistente tramite ID fornendo nuovi dati (nome, cognome, email).
-Aggiornare un utente esistente con un'immagine.
-Eliminare un utente tramite ID.
-Gestione degli ordini:
+<p>Ricevere tutti gli utenti.</p>
+<p>Creare un nuovo utente fornendo nome, cognome ed email.</p>
+<p>Creare un nuovo utente con un'immagine.</p>
+<p>Trovare un utente specifico tramite ID.</p>
+<p>Aggiornare un utente esistente tramite ID fornendo nuovi dati (nome, cognome, email).</p>
+<p>Aggiornare un utente esistente con un'immagine.</p>
+<p>Eliminare un utente tramite ID.</p>
 
 <h3>Gestione ordini:</h3>
 
-Ricevere tutti gli ordini.
-Creare un nuovo ordine fornendo prodotti, utenti e data di inserimento.
-Creare un nuovo ordine con un documento.
-Trovare un ordine specifico tramite ID.
-Aggiornare un ordine esistente tramite ID fornendo nuovi dati (prodotti, utenti, data di inserimento).
-Aggiornare un ordine esistente con un documento.
-Eliminare un ordine tramite ID.
-
+<p>Ricevere tutti gli ordini.</p>
+<p>Creare un nuovo ordine fornendo prodotti, utenti e data di inserimento.</p>
+<p>Creare un nuovo ordine con un documento.</p>
+<p>Trovare un ordine specifico tramite ID.</p>
+<p>Aggiornare un ordine esistente tramite ID fornendo nuovi dati (prodotti, utenti, data di inserimento).</p>
+<p>Aggiornare un ordine esistente con un documento.</p>
 
 Il progetto segue l'architettura MVC.
 ## Autore
