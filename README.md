@@ -20,7 +20,7 @@ Trovi il progetto [qui](https://codesandbox.io/p/github/liviodimola/Backend-Node
 * [Http-errors](https://www.npmjs.com/package/http-errors/v/1.6.)
 * [Dotenv](https://www.npmjs.com/package/dotenv)
 ## Utilizzo
-Questo codice rappresenta un'applicazione per gestire ordini, prodotti e utenti.
+Questo codice rappresenta un'applicazione per gestire ordini, prodotti e utenti. Il progetto segue l'architettura MVC.
 
 Le principali funzionalità dell'applicazione includono:
 
@@ -52,8 +52,5 @@ Le principali funzionalità dell'applicazione includono:
 <p>Trovare un ordine specifico tramite ID.</p>
 <p>Aggiornare un ordine esistente tramite ID fornendo nuovi dati (prodotti, utenti, data di inserimento).</p>
 <p>Aggiornare un ordine esistente con un documento.</p>
-
-
-## Il progetto segue l'architettura MVC.
 ## Autore
 * [Livio Dimola](https://github.com/liviodimola) - *novello Full Stack Developer*
