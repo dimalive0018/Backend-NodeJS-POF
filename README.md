@@ -53,6 +53,7 @@ Le principali funzionalità dell'applicazione includono:
 <p>Aggiornare un ordine esistente tramite ID fornendo nuovi dati (prodotti, utenti, data di inserimento).</p>
 <p>Aggiornare un ordine esistente con un documento.</p>
 
-Il progetto segue l'architettura MVC.
+
+## Il progetto segue l'architettura MVC.
 ## Autore
 * [Livio Dimola](https://github.com/liviodimola) - *novello Full Stack Developer*
